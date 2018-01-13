@@ -17,7 +17,7 @@ public class PlayerExchange : MonoBehaviour {
     {
         anim.SetBool("Helper", GameManager.Instance.getHelper());
 
-        if (Input.GetButtonDown("Helper") && GameManager.Instance.getPhase() == 1 && GameManager.Instance.getPhase() == 5)
+        if (Input.GetButtonDown("Helper") && (GameManager.Instance.getPhase() != 1 && GameManager.Instance.getPhase() != 5))
         {
             GameManager.Instance.characterExchange();
         }

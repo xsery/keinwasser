@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour {
 
     public int weaponPlayer = 1;
     public int phase;
-    public bool Helper = true;
+    public bool Helper;
     public int lives;
 
 
@@ -44,14 +44,27 @@ public class GameManager : MonoBehaviour {
 
     public void phaseChange()
     {
-        if (phase < 5) //fase 5 seria o ultimo chefão
+        if (Helper == false)
         {
-            phase++;
+            if (phase < 5) //fase 5 seria o ultimo chefão
+            {
+                phase++;
+            }
+            else
+            {
+                phase = 1;
+            }
+        } else {
+            if ((phase > 2) && (phase < 4)) //fase 5 seria o ultimo chefão
+            {
+                phase++;
+            }
+            else
+            {
+                phase = 2;
+            }
         }
-        else
-        {
-            phase = 1;
-        }
+        
     }
 
     public int getPhase()

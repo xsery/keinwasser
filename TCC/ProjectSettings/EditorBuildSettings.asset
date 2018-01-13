@@ -6,11 +6,113 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/Official/Menu/CompanyOpening.unity
+    guid: d61402d7ab1afee48afd3256b2ddd906
+  - enabled: 1
+    path: Assets/Scenes/Official/Menu/UniversityOpening.unity
+    guid: 7c3d5a2a473ebea47846524643460f51
+  - enabled: 1
+    path: Assets/Scenes/Official/Menu/Menu.unity
+    guid: 812971599dc247b45b8c9c2e27f957d3
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow1/BeginningOfArc1Past.unity
+    guid: 7057240e310e9e24dba7aa9e08fdb35a
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow1/BeginningOfArc1House.unity
+    guid: 893856b245326bc4c968bc51565620b3
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow1/BeginningOfArc1Input.unity
+    guid: 7aa30c4f5a756a849ae90dd8e7643e21
+  - enabled: 1
+    path: Assets/Scenes/Official/Stages/Bow1/Arc1Part1and2and3.unity
+    guid: 97b4b81e23c8dbd46b9a4d99a25f3be5
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow1/EndOfArc1.unity
+    guid: fbdbe9b2295675946aad02e69bad1425
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow2/BeginningOfArc2Running.unity
+    guid: 26a7639bf93ef1240ad6eeae01e02e2f
+  - enabled: 1
+    path: Assets/Scenes/Official/Stages/Bow2/Arc2Part1.unity
+    guid: 97b0f8447d081544fad020d0b2b233a4
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow2/BeginningOfArc2Escape.unity
+    guid: 23d0cddb58a66bd40a0aa0bee1a6d86d
+  - enabled: 1
+    path: Assets/Scenes/Official/Stages/Bow2/Arc2Part2And3.unity
+    guid: 2930a501faaac344c9200fd4f1437388
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow2/EndOfArc2Present.unity
+    guid: cf31d46c25d523c4c8b3405ed2ebc521
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow2/EndOfArc2Past.unity
+    guid: 185cbb90e9153c649b1b8b3b55fdc62b
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow2/EndOfArc2ReturnToThePresent.unity
+    guid: 264ffcfb83416a2458878d2611b403ab
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow3/BeginningOfArc3.unity
+    guid: bca23ef942a1fc8489c62a76fc3bd641
+  - enabled: 1
+    path: Assets/Scenes/Official/Stages/Bow3/Arc3Part1.unity
+    guid: efabf1cbbf088324ebb7b29e897676d6
+  - enabled: 1
+    path: Assets/Scenes/Official/Stages/Bow3/Arc3Part2.unity
+    guid: 7e39ea5814c7cd545a9df635ce9b2c2a
+  - enabled: 1
+    path: Assets/Scenes/Official/Stages/Bow3/Arc3Part3.unity
+    guid: dfc869342ffeb5a4fb267175bbab6e1c
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow3/EndOfArc3Present.unity
+    guid: 072ffc1c5b69ac94b9a998949efaecc0
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow3/EndOfArc3Past.unity
+    guid: ca9e1c7ff1e8c064d83c7c87fad7f2f8
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow3/EndOfArc3ReturnToThePresent.unity
+    guid: 416a48a5966bc504aa6dce3aff251e87
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow4/BeginningOfArc4.unity
+    guid: d22d8ffd5b87543489d359299c31551c
+  - enabled: 1
+    path: Assets/Scenes/Official/Stages/Bow4/Arc4Part1.unity
+    guid: 92f275f45315f474c85f9ae3f43ca769
+  - enabled: 1
+    path: Assets/Scenes/Official/Stages/Bow4/Arc4Part2.unity
+    guid: e404a3a837d4913488b1323f15cc1ae1
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow4/BeginningOfTheFinalBattle.unity
+    guid: 870a609f05b43e747b03dc857e920f65
+  - enabled: 1
+    path: Assets/Scenes/Official/Stages/Bow4/Arc4Part3.unity
+    guid: 517a9de4bdc94e94c821f09a3b11130c
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow4/MiddleOfTheFinalBattlePresent.unity
+    guid: 6b10c65b9642a8840a3b4c9a59af120e
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow4/MiddleOfTheFinalBattlePast.unity
+    guid: 6b10e93dbc43c6a4d90a0199c54eecd8
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow4/MiddleOfTheFinalBattleReturnToThePresent.unity
+    guid: 875fe16d1b1509d4f9dd67c62f5d4036
+  - enabled: 1
+    path: Assets/Scenes/Official/Stages/Bow4/Arc4Part4.unity
+    guid: 25a6d2a3f449239458e00a6738f6de78
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow4/EndOfArc4Dam.unity
+    guid: dbe8b1e44d2189646afc5e0e39217385
+  - enabled: 1
+    path: Assets/Scenes/Official/Narrative/Bow4/EndOfArc4DamEntrance.unity
+    guid: 53708a40359b3b540a2449b88046ec2b
+  - enabled: 1
+    path: Assets/Scenes/Official/Extra/Credits.unity
+    guid: 01877bc2227db9749a921ae7dabced61
+  - enabled: 1
+    path: Assets/Scenes/Lab/Menu/Menu.unity
     guid: e26b5aa8e46edec459983d675f8c8295
   - enabled: 1
-    path: Assets/Scenes/Creditos.unity
+    path: Assets/Scenes/Lab/Extra/Creditos.unity
     guid: 61905c2020515a74c8e3f7b3b7bec85d
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Scenes/Lab/Stages/Level1.unity
     guid: 5c58383609d70f54aaaf311d1223f5e7
