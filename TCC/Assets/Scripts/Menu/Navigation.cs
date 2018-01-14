@@ -192,10 +192,10 @@ public class Navigation : MonoBehaviour {
         StartCoroutine("Arc4Part4");
     }
 
-    public void playArc4Part5()
+    public void playCredits()
     {
         button.Play();
-        StartCoroutine("Arc4Part5");
+        StartCoroutine("Credits");
     }
 
     IEnumerator BeginningOfArc1Past()
@@ -418,11 +418,11 @@ public class Navigation : MonoBehaviour {
         SceneManager.LoadScene("Scenes/Official/Stages/Bow4/Arc4Part4");
     }
 
-    IEnumerator Arc4Part5()
+    IEnumerator Credits()
     {
         float fadeTime = GameObject.Find("Main Camera").GetComponent<Fading>().BeginFade(1);
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("Scenes/Official/Stages/Bow3/Arc4Part5");
+        SceneManager.LoadScene("Scenes/Official/Extra/Credits");
     }
 
 }

@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     private Animator anim;
     private Transform groundCheck;
     private bool onGround;
-    private bool isDead = false;
+    public bool isDead = false;
     private bool facingRight = true;
     private bool jump = false;
     private AudioSource audioS;
