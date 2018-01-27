@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 	private Transform groundCheck;
 
 	private bool onGround;
+	private bool facingRight;
 	private float horizontal;
 	private float vertical;
 	private float jump;
@@ -29,6 +30,14 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 
 		onGround = Physics.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
+
+		if (rbPlayer.velocity.x > 0){
+			transform.eulerAngles = new Vector3 (0, 0, 0);
+		}
+		if (rbPlayer.velocity.x < 0){
+			transform.eulerAngles = new Vector3 (0, 180, 0);
+
+		}
 
 	}
 

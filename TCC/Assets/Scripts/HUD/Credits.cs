@@ -39,62 +39,62 @@ public class Credits : MonoBehaviour
     IEnumerator credits()
     {
         //Credits1
-        txCredits.text = "\n\n\n\nKein Wasser";
+        txCredits.text = "\n\n\n\n\n\nKein Wasser";
         imCredits.sprite = credits1;
         tx_credits.SetActive(true);
         yield return new WaitForSeconds((interval / 2));
         tx_credits.SetActive(false);
         yield return new WaitForSeconds((interval / 2));
-        txCredits.text = "\n\n\nProgramadores:\n\nFrancisca Augusto";
+        txCredits.text = "\n\n\nProgramadores:\n\nFrancisca Augusto,\nLuis Henrique,\nSamuel Queiroz e\nTiago Parente";
         imCredits.sprite = credits2;
         tx_credits.SetActive(true);
         //Credits2
         yield return new WaitForSeconds((interval / 2));
         tx_credits.SetActive(false);
         yield return new WaitForSeconds((interval / 2));
-        txCredits.text = "\n\n\nProgramadores:\n\nLuis Henrique";
+        txCredits.text = "\n\n\n\nDesigners:\n\nDeny Monteiro\ne\nThiago Calazans";
         imCredits.sprite = credits3;
         tx_credits.SetActive(true);
         //Credits3
         yield return new WaitForSeconds((interval / 2));
         tx_credits.SetActive(false);
         yield return new WaitForSeconds((interval / 2));
-        txCredits.text = "\n\n\nProgramadores:\n\nSamuel Queiroz";
+        txCredits.text = "\n\n\n\nDesigners de Som:\n\nMatheus Casalotti\ne\nFúlvio Casalotti";
         imCredits.sprite = credits4;
         tx_credits.SetActive(true);
         //Credits4
         yield return new WaitForSeconds((interval / 2));
         tx_credits.SetActive(false);
         yield return new WaitForSeconds((interval / 2));
-        txCredits.text = "\n\n\nProgramadores:\n\nTiago Parente";
+        txCredits.text = "\n\n\n\nDubladores:\n\nNelson Neto                      Kein\nSamuel Queiroz    Geist(Brise)\nMayara Silva              Weisheit";
         imCredits.sprite = credits5;
         tx_credits.SetActive(true);
         //Credits5
         yield return new WaitForSeconds((interval / 2));
         tx_credits.SetActive(false);
         yield return new WaitForSeconds((interval / 2));
-        txCredits.text = "\n\n\nDesigners:\n\nDeny Monteiro";
+        txCredits.text = "\n\n\n\nDubladores:\n\nLaura Benayon                    Reinheit\nFúlvio Casalotti     Rei Bestante(Tier)";
         imCredits.sprite = credits6;
         tx_credits.SetActive(true);
         //Credits6
         yield return new WaitForSeconds((interval / 2));
         tx_credits.SetActive(false);
         yield return new WaitForSeconds((interval / 2));
-        txCredits.text = "\n\n\nDesigners:\n\nThiago Calazans";
+        txCredits.text = "\n\n\n\nDubladores:\n\nMatheus Casalotti     Kommandant\nFrancisca Augusto            Layouna";
         imCredits.sprite = credits7;
         tx_credits.SetActive(true);
         //Credits7
         yield return new WaitForSeconds((interval / 2));
         tx_credits.SetActive(false);
         yield return new WaitForSeconds((interval / 2));
-        txCredits.text = "\n\n\nDesigners de Som:\n\nMatheus Casalotti\ne\nFúlvio Casalotti";
+        txCredits.text = "\n\n\n\nDubladores:\n\nTiago Parente                        Tertulius\nElisa Benayon                    Unschuldig\nThiago Calazans Weissmann(Feuer)";
         imCredits.sprite = credits8;
         tx_credits.SetActive(true);
         //Credits8
         yield return new WaitForSeconds((interval / 2));
         tx_credits.SetActive(false);
         yield return new WaitForSeconds((interval / 2));
-        txCredits.text = "\n\nOrientadora:\nCristina Araujo\n\nCo-orientador:\nRicardo Maginator";
+        txCredits.text = "\n\n\n\nOrientadora:\nCristina Araujo\n\nCo-orientador:\nRicardo Maginator";
         imCredits.sprite = credits9;
         tx_credits.SetActive(true);
         //Credits9

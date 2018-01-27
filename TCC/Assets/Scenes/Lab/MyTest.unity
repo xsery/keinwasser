@@ -367,7 +367,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &267974177
 Animator:
   serializedVersion: 3
@@ -583,7 +583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &420476890
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -981,7 +981,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 713908449}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e234a2d7ea03a91409a71a3ab563ec31, type: 3}
   m_Name: 
@@ -1484,7 +1484,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4932706904776106, guid: 9d3f43e3e6e673749b2f2e393745b1a9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.546
+      value: -0.384
       objectReference: {fileID: 0}
     - target: {fileID: 1621467110787430, guid: 9d3f43e3e6e673749b2f2e393745b1a9, type: 2}
       propertyPath: m_IsActive
