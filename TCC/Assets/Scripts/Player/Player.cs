@@ -16,9 +16,11 @@ public class Player : MonoBehaviour
     private int currentHealth;
     private float currentSpeed;
     private Rigidbody rb;
-    private Animator anim;
+    //private Animator anim;
     private Transform groundCheck;
+    private Transform wallCheck;
     private bool onGround;
+    private bool onWallX;
     public bool isDead = false;
     private bool facingRight = true;
     private bool jump = false;
@@ -28,8 +30,9 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
         groundCheck = gameObject.transform.Find("GroundCheck");
+        wallCheck = gameObject.transform.Find("WallCheck");
         currentSpeed = maxSpeed;
         audioS = GetComponent<AudioSource>();
     }
@@ -38,6 +41,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         onGround = Physics.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+        onWallX = Physics.Linecast(transform.position, wallCheck.position, 1 << LayerMask.NameToLayer("LimiteX"));
 
         if (Input.GetButtonDown("Jump") && onGround)
         {
@@ -46,7 +50,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Attack"))
         {
-            anim.SetTrigger("Attack");
+            //anim.SetTrigger("Attack");
         }
     }
 
@@ -64,10 +68,8 @@ public class Player : MonoBehaviour
 
             if (onGround)
             {
-                anim.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
+                //anim.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
             }
-
-            rb.velocity = new Vector3(h * currentSpeed, rb.velocity.y, z * currentSpeed);
 
             if (h > 0 && !facingRight)
             {
@@ -84,11 +86,27 @@ public class Player : MonoBehaviour
                 rb.AddForce(Vector3.up * jumpForce);
             }
 
-            float minWidth = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;
-            float maxWidth = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 10)).x;
-            rb.position = new Vector3(Mathf.Clamp(rb.position.x, minWidth + 1, maxWidth - 1),
-                rb.position.y,
-                Mathf.Clamp(rb.position.z, minHeight + 1, maxHeight - 1));
+            float minWidthCamera = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;
+            float maxWidthCamera = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 10)).x;
+
+            if (onWallX)
+            {
+
+                rb.velocity = new Vector3(0, rb.velocity.y, z * currentSpeed); 
+            }
+            else
+            {
+                rb.velocity = new Vector3(h * currentSpeed, rb.velocity.y, z * currentSpeed);
+            }
+
+                rb.position = new Vector3(Mathf.Clamp(rb.position.x, minWidthCamera + 1, maxWidthCamera - 1),
+                    rb.position.y,
+                    Mathf.Clamp(rb.position.z, minHeight + 1, maxHeight - 1));
+                if (((rb.position.x <= minWidthCamera + 1) && (!facingRight)) ||
+                    ((rb.position.x >= maxWidthCamera - 1) && (facingRight)))
+                {
+                    rb.velocity = new Vector3(0, rb.velocity.y, z * currentSpeed);
+                }
         }
     }
 
@@ -122,7 +140,7 @@ public class Player : MonoBehaviour
         if (!isDead)
         {
             currentHealth -= damage;
-            anim.SetTrigger("HitDamage");
+            //anim.SetTrigger("HitDamage");
             FindObjectOfType<UIManager>().UpdateHealth(currentHealth);
             PlaySong(collisionSound);
             if(currentHealth <= 0)
@@ -148,7 +166,7 @@ public class Player : MonoBehaviour
             if (Input.GetButtonDown("Item"))
             {
                 Destroy(other.gameObject);
-                anim.SetTrigger("Catching");
+                //anim.SetTrigger("Catching");
                 PlaySong(healthItem);
                 currentHealth = maxHealth;
                 FindObjectOfType<UIManager>().UpdateHealth(currentHealth);
@@ -164,7 +182,7 @@ public class Player : MonoBehaviour
             FindObjectOfType<UIManager>().UpdateLives();
             currentHealth = maxHealth;
             FindObjectOfType<UIManager>().UpdateHealth(currentHealth);
-            anim.Rebind();
+            //anim.Rebind();
             float minWidth = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;
             transform.position = new Vector3(minWidth, 10, -4);
         }

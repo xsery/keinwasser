@@ -18,6 +18,7 @@ public class BGScroller : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         var vel = pl.GetComponent<Rigidbody>().velocity.x;
+        Debug.Log(vel);
         if (vel != 0f) {
             var side = pl.transform.localScale.x;
             pos += speed * side;
