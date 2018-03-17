@@ -11,12 +11,12 @@ public class Player : MonoBehaviour
     public int maxHealth = 10;
     public string playerName;
     public Sprite playerImage;
-    public AudioClip collisionSound, jumpSound, healthItem;
+    //public AudioClip collisionSound, jumpSound, healthItem;
 
     private int currentHealth;
     private float currentSpeed;
     private Rigidbody rb;
-    //private Animator anim;
+    private Animator anim;
     private Transform groundCheck;
     private Transform wallCheck;
     private bool onGround;
@@ -24,24 +24,24 @@ public class Player : MonoBehaviour
     public bool isDead = false;
     private bool facingRight = true;
     private bool jump = false;
-    private AudioSource audioS;
+    //private AudioSource audioS;
 
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         groundCheck = gameObject.transform.Find("GroundCheck");
-        wallCheck = gameObject.transform.Find("WallCheck");
+        //wallCheck = gameObject.transform.Find("WallCheck");
         currentSpeed = maxSpeed;
-        audioS = GetComponent<AudioSource>();
+        //audioS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
         onGround = Physics.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-        onWallX = Physics.Linecast(transform.position, wallCheck.position, 1 << LayerMask.NameToLayer("LimiteX"));
+        //onWallX = Physics.Linecast(transform.position, wallCheck.position, 1 << LayerMask.NameToLayer("LimiteX"));
 
         if (Input.GetButtonDown("Jump") && onGround)
         {
@@ -50,8 +50,15 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Attack"))
         {
-            //anim.SetTrigger("Attack");
+            anim.SetTrigger("Attack");
         }
+
+		if (rb.velocity.x == 0f && onGround) {
+			
+			anim.SetBool ("Walk", false);
+		}
+		else
+			anim.SetBool ("Walk", true);
     }
 
     private void FixedUpdate()
@@ -66,11 +73,6 @@ public class Player : MonoBehaviour
                 z = 0;
             }
 
-            if (onGround)
-            {
-                //anim.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
-            }
-
             if (h > 0 && !facingRight)
             {
                 Flip();
@@ -83,6 +85,7 @@ public class Player : MonoBehaviour
             if (jump)
             {
                 jump = false;
+				anim.SetTrigger ("Jump");
                 rb.AddForce(Vector3.up * jumpForce);
             }
 
@@ -102,11 +105,15 @@ public class Player : MonoBehaviour
                 rb.position = new Vector3(Mathf.Clamp(rb.position.x, minWidthCamera + 1, maxWidthCamera - 1),
                     rb.position.y,
                     Mathf.Clamp(rb.position.z, minHeight + 1, maxHeight - 1));
-                if (((rb.position.x <= minWidthCamera + 1) && (!facingRight)) ||
+               
+
+
+			if (((rb.position.x <= minWidthCamera + 1) && (!facingRight)) ||
                     ((rb.position.x >= maxWidthCamera - 1) && (facingRight)))
                 {
                     rb.velocity = new Vector3(0, rb.velocity.y, z * currentSpeed);
                 }
+
         }
     }
 
@@ -131,8 +138,8 @@ public class Player : MonoBehaviour
 
     public void PlaySong(AudioClip clip)
     {
-        audioS.clip = clip;
-        audioS.Play();
+        //audioS.clip = clip;
+        //audioS.Play();
     }
 
     public void TookDamage(int damage)
@@ -142,7 +149,7 @@ public class Player : MonoBehaviour
             currentHealth -= damage;
             //anim.SetTrigger("HitDamage");
             FindObjectOfType<UIManager>().UpdateHealth(currentHealth);
-            PlaySong(collisionSound);
+            //PlaySong(collisionSound);
             if(currentHealth <= 0)
             {
                 isDead = true;
@@ -167,7 +174,7 @@ public class Player : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 //anim.SetTrigger("Catching");
-                PlaySong(healthItem);
+                //PlaySong(healthItem);
                 currentHealth = maxHealth;
                 FindObjectOfType<UIManager>().UpdateHealth(currentHealth);
             }

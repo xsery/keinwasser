@@ -77,6 +77,13 @@ public class EnemyMovement : MonoBehaviour {
 
 		}
 
+		if (rb.velocity.x == 0 && onGround) {
+
+			anim.SetBool ("WalkEnemy", false);
+		}
+		else
+			anim.SetBool ("WalkEnemy", true);
+
 
 		if (damaged && !isDead) {
 			damageTimer += Time.deltaTime;

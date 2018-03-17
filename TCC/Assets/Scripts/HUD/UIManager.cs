@@ -59,6 +59,6 @@ public class UIManager : MonoBehaviour {
 
     public void UpdateLives()
     {
-        livesText.text = "x = " + FindObjectOfType<GameManager>().lives;
+        //livesText.text = "x = " + FindObjectOfType<GameManager>().lives;
     }
 }

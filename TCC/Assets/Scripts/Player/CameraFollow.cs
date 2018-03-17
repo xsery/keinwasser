@@ -13,6 +13,7 @@ public class CameraFollow : MonoBehaviour {
     public Vector2 minXAndY; // The minimum x and y coordinates the camera can have.
 
     private Transform m_Player; // Reference to the player's transform.
+    public bool fixedCamera = false;
 
 
     private void Awake()
@@ -38,7 +39,10 @@ public class CameraFollow : MonoBehaviour {
 
     private void Update()
     {
-        TrackPlayer();
+        if (!fixedCamera)
+        {
+            TrackPlayer();
+        }
     }
 
 

@@ -6,6 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class Navigation : MonoBehaviour {
 
+	public void playGame(){
+
+		SceneManager.LoadScene ("Level1");
+
+	}
+
+}
+
+
+	/*
     public AudioSource button;
 
     public void playBeginningOfArc1Past(){
@@ -425,4 +435,7 @@ public class Navigation : MonoBehaviour {
         SceneManager.LoadScene("Scenes/Official/Extra/Credits");
     }
 
-}
+*/
+
+
+
